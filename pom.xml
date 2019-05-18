@@ -149,5 +149,12 @@
             </plugin>
         </plugins>
     </build>
+    
+    <developers>
+    	<developer>
+    		<name>Ederson de Freitas Mangueira</name>
+    		<email>ederson.mangueira@hotmail.com</email>
+    	</developer>
+    </developers>
 
 </project>
