@@ -7,8 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
-import org.hibernate.Hibernate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Sessao {
@@ -16,6 +17,8 @@ public class Sessao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@DateTimeFormat(pattern = "hh:mm")
+	@NotNull
 	private LocalTime horario;
 	@ManyToOne
 	private Sala sala;
