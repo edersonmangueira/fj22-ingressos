@@ -28,15 +28,18 @@ public class Sessao {
 	private Filme filme;
 	private BigDecimal preco;
 	
-	
-	/**
-	 * @deprecated hibernate only
-	 */
 	public Sessao(LocalTime horario,Filme filme, Sala sala) {
 		this.horario = horario;
 		this.filme = filme;
 		this.sala = sala;
 		this.preco = sala.getPreco().add(filme.getPreco());
+	}
+	
+	/**
+	 * @deprecated hibernate only
+	 */
+	public Sessao() {
+		
 	}
 
 	public Integer getId() {
