@@ -30,7 +30,7 @@ public class SessaoDao {
 	}
 	
 	public List<Sessao> buscaSessoesDoFilme(Filme filme){
-		return manager.createNamedQuery("select s from Sessao s where s.filme = :filme", Sessao.class)
+		return manager.createQuery("select f from Sessao f where f.filme = :filme", Sessao.class)
 				.setParameter("filme", filme)
 				.getResultList();
 	}

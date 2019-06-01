@@ -84,7 +84,7 @@ public class FilmeController {
         filmeDao.delete(id);
     }
     
-    @GetMapping(value="/admin/em-cartaz")
+    @GetMapping(value="/filme/em-cartaz")
     public ModelAndView emCartaz() {
     	
     	ModelAndView modelAndView = new ModelAndView("/filme/em-cartaz");
