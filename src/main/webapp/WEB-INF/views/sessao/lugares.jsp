@@ -39,8 +39,8 @@
 								<c:forEach var="lugar" items="${map.value}">
 									<td class="fileira-assento"><figure>
 										<svg 
-												class="assento ${sessao.isDisponivel(lugar) ? 'disponivel' : 'ocupado'}"
-												onclick="${sessao.isDisponivel(lugar) ? 'changeCheckbox(this)' : '' }"
+												class="assento ${sessao.isDisponivel(lugar) && !carrinho.isSelecionado(lugar) ? 'disponivel' : 'ocupado'}"
+												onclick="${sessao.isDisponivel(lugar) && !carrinho.isSelecionado(lugar) ? 'changeCheckbox(this)' : '' }"
 												class="assento disponivel" id="${lugar.id}"  version="1.0" id="SEAT" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 												viewBox="0 0 318.224 305.246" enable-background="new 0 0 318.224 305.246" xml:space="preserve">
 											<g id="FILL">
@@ -77,7 +77,7 @@
 					</c:forEach>
 					<tr class="telao">
 						<td id="tela">Tela</td>
-					attributeValue</tr>
+					</tr>
 					<tr class="legenda legenda-menu">
 						<td>Legenda</td>
 					</tr>
@@ -118,7 +118,7 @@
 	
 	            <button type="submit" class="btn btn-primary finaliza">Finalizar Compra</button>
 	        </form>
-			</div>attributeValue
+			</div>
 		</div>
 		</div>
 
@@ -134,8 +134,7 @@
                 var linhaId = "linha_" + salaId + "_" + sessaoId + "_" + lugarNome;
 
                 console.log(linhaId);
-attributeValue
-                var tbody = document.querySelector("#tabela-ingressos>tbody");
+                var tbody attributeValue = document.querySelector("#tabela-ingressos>tbody");
                 if (!checkbox.checked){
 
                     var index = tbody.rows.length;
@@ -151,7 +150,7 @@ attributeValue
                     cellSala.appendChild(sala);
 
                     var cellFilme = row.insertCell(1);
-                 attributeValue   var filme = document.createTextNode('${sessao.filme.nome}');
+                    var filme = document.createTextNode('${sessao.filme.nome}');
                     cellFilme.appendChild(filme);
 
                     var cellHorario = row.insertCell(2);
